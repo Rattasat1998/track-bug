@@ -2,31 +2,33 @@ import React from 'react';
 
 const styles = {
     select: {
-        padding: '0.25rem 0.75rem',
-        borderRadius: '9999px',
-        fontSize: '0.75rem',
-        fontWeight: 600,
-        textTransform: 'uppercase',
-        letterSpacing: '0.05em',
+        padding: '0.15rem 0.5rem',
+        borderRadius: '4px',
+        fontSize: '0.85rem',
+        fontWeight: 400,
+        textTransform: 'none',
+        letterSpacing: 'normal',
         display: 'inline-block',
         border: 'none',
         cursor: 'pointer',
         appearance: 'none',
         WebkitAppearance: 'none',
-        textAlign: 'center',
+        textAlign: 'left',
         outline: 'none',
-        transition: 'opacity 0.2s',
+        transition: 'background-color 0.2s',
+        lineHeight: '1.2',
+        minWidth: '80px',
     },
-    // Reusing colors from StatusBadge for consistency
-    critical: { backgroundColor: 'rgba(239, 68, 68, 0.2)', color: '#ef4444', border: '1px solid rgba(239, 68, 68, 0.5)' },
-    high: { backgroundColor: 'rgba(249, 115, 22, 0.2)', color: '#f97316', border: '1px solid rgba(249, 115, 22, 0.5)' },
-    medium: { backgroundColor: 'rgba(234, 179, 8, 0.2)', color: '#eab308', border: '1px solid rgba(234, 179, 8, 0.5)' },
-    low: { backgroundColor: 'rgba(59, 130, 246, 0.2)', color: '#3b82f6', border: '1px solid rgba(59, 130, 246, 0.5)' },
+    // Notion Tag Colors
+    critical: { backgroundColor: 'var(--tag-red-bg)', color: 'var(--tag-red-text)' },
+    high: { backgroundColor: 'var(--tag-orange-bg)', color: 'var(--tag-orange-text)' },
+    medium: { backgroundColor: 'var(--tag-yellow-bg)', color: 'var(--tag-yellow-text)' },
+    low: { backgroundColor: 'var(--tag-blue-bg)', color: 'var(--tag-blue-text)' },
 
-    backlog: { backgroundColor: 'rgba(113, 113, 122, 0.2)', color: '#71717a', border: '1px solid rgba(113, 113, 122, 0.5)' },
-    inprogress: { backgroundColor: 'rgba(139, 92, 246, 0.2)', color: '#8b5cf6', border: '1px solid rgba(139, 92, 246, 0.5)' },
-    testing: { backgroundColor: 'rgba(236, 72, 153, 0.2)', color: '#ec4899', border: '1px solid rgba(236, 72, 153, 0.5)' },
-    done: { backgroundColor: 'rgba(16, 185, 129, 0.2)', color: '#10b981', border: '1px solid rgba(16, 185, 129, 0.5)' },
+    backlog: { backgroundColor: 'var(--tag-gray-bg)', color: 'var(--tag-gray-text)' },
+    inprogress: { backgroundColor: 'var(--tag-blue-bg)', color: 'var(--tag-blue-text)' },
+    testing: { backgroundColor: 'var(--tag-purple-bg)', color: 'var(--tag-purple-text)' },
+    done: { backgroundColor: 'var(--tag-green-bg)', color: 'var(--tag-green-text)' },
 };
 
 const normalize = (str) => str.toLowerCase().replace(/\s+/g, '');
@@ -46,7 +48,7 @@ const StatusSelect = ({ type, value, onChange }) => {
             style={{ ...styles.select, ...style }}
         >
             {options.map(opt => (
-                <option key={opt} value={opt} style={{ backgroundColor: '#1f1f1f', color: 'white' }}>
+                <option key={opt} value={opt}>
                     {opt}
                 </option>
             ))}
