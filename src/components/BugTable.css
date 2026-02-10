@@ -1,0 +1,90 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.bug-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    text-align: left;
+}
+
+.bug-table th,
+.bug-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bug-table th {
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+}
+
+.bug-table tr:last-child td {
+    border-bottom: none;
+}
+
+.bug-table tr:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.bug-id {
+    font-family: monospace;
+    color: var(--text-secondary);
+}
+
+.bug-title {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.assignee-avatar {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--accent-primary);
+    color: white;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    /* Added border to make it pop against dark bg */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.bug-steps ol {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+}
+
+.view-link {
+    color: var(--accent-info);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.view-link:hover {
+    text-decoration: underline;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.assignee-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
